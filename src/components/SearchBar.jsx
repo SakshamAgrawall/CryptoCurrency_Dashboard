@@ -18,9 +18,9 @@ export default function SearchBar() {
     }, 2000)
     return (
         <>
-            <div className="flex " >
-                <span className="flex " >
-                    <select className='border border-black outline-none font-mono text-xl cursor-pointer backdrop-blur-md bg-opacity-10 rounded-md w-[90px] text-center sm:w-[90px] z-1 pr-3 pl-2 shadow-lg' style={{ marginLeft: "20px", marginTop: "2px" }} value={currency} onChange={handleCurrency} ref={currencyRef} >
+            <div className="flex rounded-lg" >
+                <span className="flex rounded-lg" >
+                    <select className='border border-black outline-none font-mono text-[20px] text-bold cursor-pointer backdrop-blur-md bg-opacity-10 rounded-lg w-[90px] text-center sm:w-[90px] z-1 pr-3 pl-2 shadow-lg' value={currency} onChange={handleCurrency} ref={currencyRef} >
                         <option value={"usd"} className="text-black-600">USD</option>
                         <option value={"inr"} className="text-black-600">INR</option>
                         <option value={"eur"} className="text-black-600">EUR</option>

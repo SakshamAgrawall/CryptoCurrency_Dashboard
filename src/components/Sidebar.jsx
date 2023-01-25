@@ -4,9 +4,9 @@ import { CryptoContext } from "../Context/Context";
 export default function Sidebar() {
   const { cryptoData, currency } = useContext(CryptoContext);
   return (
-    <div className="bg-black bg-opacity-0 backdrop-blur-md border border-black rounded-lg shadow-lg">
+    <div className="bg-black  bg-white backdrop-blur-md border border-black rounded-lg shadow-lg">
       <div>
-        <p className="text-black text-bold text-lg text-center mt-4 font-semibold">
+        <p className="text-black text-bold text-[20px] text-center mt-4 font-bold">
           Cryptocurrency by market cap
         </p>
       </div>
@@ -23,14 +23,14 @@ export default function Sidebar() {
                     <img
                       src={element.image}
                       alt={element.name}
-                      className="flex absolute w-[1.2rem] h-[1.3rem] ml-3 mt-1"
+                      className="flex absolute w-[1.5rem] h-[1.6rem] ml-2"
                     />
-                    <span className="flex flex-row pl-9 mt-3 text-[16px]">
+                    <span className="flex flex-row pl-9 mt-3 text-[20px]">
                       {element.name}
                     </span>
                     <div className="flex flex-row justify-end mr-2">
                       <div
-                        className={`text-[12px] 
+                        className={`text-[20px] 
                         ${
                           element.market_cap_change_percetage_24h > 0
                             ? "text-green-700"
@@ -38,7 +38,7 @@ export default function Sidebar() {
                         }`}
                       >
                         <i
-                          className={`mr-1 text-lg ${
+                          className={`mr-1 text-[25px] ${
                             element.market_cap_change_percetage_24h > 0
                               ? "fa-solid fa-caret-up"
                               : "fa-solid fa-caret-down"
@@ -54,7 +54,7 @@ export default function Sidebar() {
                     </div>
 
                     <div className="-ml-9">
-                      <span className="text-[15px] -mt-0 ml-3 font-bold flex pl-8 mx-4 mb-4 truncate">
+                      <span className="text-[20px] -mt-0 ml-3 font-bold flex pl-8 mx-4 mb-4 truncate">
                         Mkt.Cap{" "}
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
