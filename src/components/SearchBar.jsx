@@ -1,25 +1,37 @@
-import React from 'react'
+import React, { useContext, useRef } from 'react'
+import { CryptoContext } from '../Context/Context'
 import SearchInput from './SearchInput'
-
+import debounce from 'lodash.debounce'
 
 
 export default function SearchBar() {
+    const { getSearchResult, setCurrency, currency } = useContext(CryptoContext);
+    const currencyRef = useRef();
+    const handleCurrency = (x) => {
+        x.preventDefault();
+        let val = currencyRef.current.value;
+        setCurrency(val);
+        currencyRef.current.value = ""
+    }
+    const debounceFunc = debounce(function (val) {
+        getSearchResult(val);
+    }, 2000)
     return (
         <>
             <div className="flex " >
                 <span className="flex " >
-                    <select className='border border-black outline-none font-mono text-xl cursor-pointer backdrop-blur-md bg-opacity-10 rounded-md w-[90px] text-center sm:w-[90px] z-1 pr-3 pl-2 shadow-lg' style={{ marginLeft: "20px", marginTop: "2px" }} >
-                        <option value={"usd"} className="text-green-600">USD</option>
-                        <option value={"inr"} className="text-green-600">INR</option>
-                        <option value={"eur"} className="text-green-600">EUR</option>
-                        <option value={"jpy"} className="text-green-600">JPY</option>
-                        <option value={"gbp"} className="text-green-600">GBP</option>
-                        <option value={"aud"} className="text-green-600">AUD</option>
-                        <option value={"cad"} className="text-green-600">CAD</option>
+                    <select className='border border-black outline-none font-mono text-xl cursor-pointer backdrop-blur-md bg-opacity-10 rounded-md w-[90px] text-center sm:w-[90px] z-1 pr-3 pl-2 shadow-lg' style={{ marginLeft: "20px", marginTop: "2px" }} value={currency} onChange={handleCurrency} ref={currencyRef} >
+                        <option value={"usd"} className="text-black-600">USD</option>
+                        <option value={"inr"} className="text-black-600">INR</option>
+                        <option value={"eur"} className="text-black-600">EUR</option>
+                        <option value={"jpy"} className="text-black-600">JPY</option>
+                        <option value={"gbp"} className="text-black-600">GBP</option>
+                        <option value={"aud"} className="text-black-600">AUD</option>
+                        <option value={"cad"} className="text-black-600">CAD</option>
                     </select>
                 </span>
                 <div className="relative w-full">
-                    <SearchInput /> 
+                    <SearchInput handleSearch={debounceFunc} />
                 </div>
             </div>
         </>
