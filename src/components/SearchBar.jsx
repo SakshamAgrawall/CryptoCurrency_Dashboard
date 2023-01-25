@@ -8,7 +8,7 @@ export default function SearchBar() {
         <>
             <div className="flex " >
                 <span className="flex " >
-                    <select className='border border-black outline-none font-mono text-xl cursor-pointer backdrop-blur-md bg-opacity-10 rounded-md w-[90px] text-center sm:w-[90px] z-1 pr-3 pl-2 shadow-lg' style={{ marginLeft: "20px", marginTop: "20px" }} >
+                    <select className='border border-black outline-none font-mono text-xl cursor-pointer backdrop-blur-md bg-opacity-10 rounded-md w-[90px] text-center sm:w-[90px] z-1 pr-3 pl-2 shadow-lg' style={{ marginLeft: "20px", marginTop: "2px" }} >
                         <option value={"usd"} className="text-green-600">USD</option>
                         <option value={"inr"} className="text-green-600">INR</option>
                         <option value={"eur"} className="text-green-600">EUR</option>
