@@ -12,8 +12,8 @@ export default function Sidebar() {
       </div>
       <div>
         {cryptoData ? (
-          <table className="w-full table-auto">
-            <tbody>
+          <div className="w-full table-auto ">
+            <div>
               {cryptoData.map((element) => {
                 return (
                   <div
@@ -52,9 +52,8 @@ export default function Sidebar() {
                         </span>
                       </div>
                     </div>
-
                     <div className="-ml-9">
-                      <span className="text-[20px] -mt-0 ml-3 font-bold flex pl-8 mx-4 mb-4 truncate">
+                      <span className="text-[20px] -mt-4 ml-3 flex pl-8 mx-4 mb-4 truncate">
                         Mkt.Cap{" "}
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
@@ -65,8 +64,8 @@ export default function Sidebar() {
                   </div>
                 );
               })}
-            </tbody>
-          </table>
+            </div>
+          </div>
         ) : null}
       </div>
     </div>
