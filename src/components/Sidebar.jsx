@@ -53,9 +53,10 @@ export default function Sidebar() {
                       </div>
                     </div>
                     <div className="-ml-9">
-                      <span className="text-[20px] -mt-4 ml-3 flex pl-8 mx-4 mb-4 truncate">
+                      <span className="text-[15px] -mt-4 ml-3 flex pl-8 mx-4 mb-4 truncate">
                         Mkt.Cap{" "}
-                        {new Intl.NumberFormat("en-IN", {
+                        {/* Intl.NumberFormat() --function that formats a number according to the locale and formatting options of this Intl.NumberFormat object */}
+                        {new Intl.NumberFormat("en-IN", {   
                           style: "currency",
                           currency: currency,
                         }).format(element.market_cap)}

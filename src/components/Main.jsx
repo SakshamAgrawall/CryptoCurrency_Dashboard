@@ -1,4 +1,5 @@
 import React from "react";
+import Charts from "./Charts";
 import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import Sidebar from "./Sidebar";
@@ -14,9 +15,10 @@ export default function Main() {
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 sm:grid-cols-1 shadow-lg gap-2">
           <div className="md:col-span-3 grid-cols-3 sm:grid-cols-3 container-fluid shadow-lg">
             <SearchBar />
-            {/* cryptochart */}
-            <div>
+            <Charts />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {/* portfolio */}
+              Hello
               {/* exchangecoin */}
             </div>
           </div>
