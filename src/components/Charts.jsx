@@ -21,6 +21,7 @@ export default function Charts() {
                 setChartData(data.prices)
             })
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [days, id, currency])
 
     const ChartData = chartData.map((value) => ({
@@ -74,7 +75,7 @@ export default function Charts() {
                     1Y
                 </button>
                 <button value={365} className={`rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`}>
-                    <img src="../images/Calender.png" alt="Calender" /> 
+                <i className={`mr-1 text-[25px] fa-regular fa-calendar-days`}></i>
                 </button>
 
                 {/* Here is the menu of Cryptocurrencies  */}
