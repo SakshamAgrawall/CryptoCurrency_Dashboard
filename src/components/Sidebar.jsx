@@ -6,7 +6,7 @@ import { CryptoContext } from "../Context/Context";
 export default function Sidebar() {
   const { cryptoData, currency } = useContext(CryptoContext);
   return (
-    <div className=" bg-white backdrop-blur-md border rounded-lg shadow-lg">
+    <div className=" bg-white scroll-smooth backdrop-blur-md border rounded-lg shadow-lg">
       <div>
         <p className="text-black text-bold text-[20px] text-center mt-4 font-bold">
           Cryptocurrency by market cap
