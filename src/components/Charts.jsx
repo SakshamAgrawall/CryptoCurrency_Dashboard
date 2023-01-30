@@ -12,6 +12,8 @@ export default function Charts() {
     const [interval, setInterval] = useState([])
     const [chartData, setChartData] = useState([])
     const [chartType, setChartType] = useState("Line Chart")
+
+    
     useEffect(() => {
         fetch(
             `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}&interval=${interval}`
@@ -53,7 +55,7 @@ export default function Charts() {
 
 
     return (
-        <div className="container-fluid w-full h-96 border border-gray-200 bg-opacity-10 backdrop-blur-md my-5 rounded-lg px-4 pt-3 lg:mt-3">
+        <div className="container-fluid w-full h-96 border  border-gray-100 bg-opacity-10 backdrop-blur-md my-5 rounded-lg px-4 pt-3 lg:mt-3">
             <div className="text-black flex ml-4 py-0 pt-20 absolute text-md">
                 {currency.toUpperCase()}
             </div>

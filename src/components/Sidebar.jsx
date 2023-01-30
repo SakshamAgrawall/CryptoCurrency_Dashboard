@@ -1,3 +1,5 @@
+// This component contains about the change in the price of crypto curriencies in last 24 hrs
+
 import React, { useContext } from "react";
 import { CryptoContext } from "../Context/Context";
 
