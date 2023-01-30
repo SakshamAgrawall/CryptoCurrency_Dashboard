@@ -79,8 +79,6 @@ export default function Charts() {
                 <button value={365} className={`rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`}>
                 <i className={`mr-1 text-[25px] fa-regular fa-calendar-days`}></i>
                 </button>
-
-                {/* Here is the menu of Cryptocurrencies  */}
                 <div className="flex absolute items-center rounded-md bg-gray-100 backdrop-blur-md p-2 w-24  lg:left-[35rem] lg:mt-4 md:left-[25rem]">
                     <select onChange={(x) => { setId(x.target.value) }} className="w-full bg-transparent text-transform:capitalize outline-none -mr-2" >
 
@@ -88,7 +86,6 @@ export default function Charts() {
                             <option key={k} value={d.id} name={d.name} className="text-gray-600">{d.id}</option>
                         ))}
                     </select>
-                    {/* Here types of charts is defined */}
                     <div className="rounded-md bg-gray-100 backdrop-blur-md p-2 absolute lg:left-[6rem] md:left-[6rem] left-[6rem] w-40 ml-5 text-center ">
                         <select className='bg-transparent outline-none w-full sm:justify-center' onChange={(x) => setChartType(x.target.value)}>
                             <option value={`BarChartH`} className="text-gray-600" >Bar Chart Horizontal </option>
@@ -98,7 +95,6 @@ export default function Charts() {
                     </div>
                 </div>
             </div>
-            {/* For more properties of Line Charts :- https://www.chartjs.org/docs/latest/charts/line.html */}
             {chartType === "LineChart" ? (
                 <div className="row-mx-2">
                     <div className="w-full h-[300px] my-8 mt-16 px-2">

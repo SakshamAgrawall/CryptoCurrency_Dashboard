@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
-import debounce from "lodash.debounce"
-import { useState } from "react";
+import { useState } from "react"
 import { CryptoContext } from '../Context/Context';
 
 export default function SearchInput({ handleSearch }) {

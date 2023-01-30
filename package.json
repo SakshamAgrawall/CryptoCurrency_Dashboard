@@ -9,6 +9,7 @@
     "axios": "^1.2.6",
     "chart.js": "^4.2.0",
     "coingecko-api": "^1.0.10",
+    "debounce": "^1.2.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
