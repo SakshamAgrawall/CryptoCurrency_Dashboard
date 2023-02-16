@@ -2,7 +2,7 @@ import React, { useContext, useRef } from 'react'
 import { CryptoContext } from '../Context/Context'
 import SearchInput from './SearchInput'
 import debounce from 'lodash.debounce'
-import "../App.css"
+
 
 
 export default function SearchBar() {
