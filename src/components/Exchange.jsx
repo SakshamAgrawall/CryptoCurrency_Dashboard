@@ -51,8 +51,7 @@ export default function Exchange() {
             <p className="text-green-600 font-semibold mr-3">Buy</p>
             <select
               className="w-[130px] h-[2rem] bg-gray-100 rounded-lg font-semibold p-1 bg-opacity-60 backdrop-blur-md focus:ring-2 px-5 inline-flex cursor-pointer"
-              onChange={(element) => setValue2(element.target.value)}
-            >
+              onChange={(e) => setValue2(e.target.value)}>
               {coin &&
                 Object.values(coin).map((h, s) => (
                   <option className="text-gray-600" value={h.value} key={s}>

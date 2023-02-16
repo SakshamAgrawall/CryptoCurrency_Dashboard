@@ -56,7 +56,7 @@ export default function Charts() {
 
     return (
         <div className="container-fluid w-full h-96 border  border-gray-100 bg-opacity-10 backdrop-blur-md my-5 rounded-lg px-4 pt-3 lg:mt-3">
-            <div className="text-black flex ml-4 py-0 pt-20 absolute text-md">
+            <div className="text-black font-semibold flex  ml-4 py-0 pt-20 absolute text-md  ">
                 {currency.toUpperCase()}
             </div>
             <div className="flex lg:gap-3 absolute items-center lg:ml-48 md:ml-16 sm:ml-28 ml-16 gap-2 lg:left-34 left-4 md:mt-3 lg:mt-3 sm:mt-3 mt-3">
@@ -87,7 +87,7 @@ export default function Charts() {
                         ))}
                     </select>
                     <div className="rounded-md bg-gray-100 backdrop-blur-md p-2 absolute lg:left-[6rem] md:left-[6rem] left-[6rem] w-40 ml-5 text-center ">
-                        <select className='bg-transparent outline-none w-full sm:justify-center' onChange={(x) => setChartType(x.target.value)}>
+                        <select className='bg-transparent outline-none w-full sm:justify-center select' onChange={(x) => setChartType(x.target.value)}>
                             <option value={`BarChartH`} className="text-gray-600" >Bar Chart Horizontal </option>
                             <option value={`LineChart`} className="text-gray-600">Line Chart</option>
                             <option value={`BarChartV`} className="text-gray-600">Bar Chart Vertical</option>
