@@ -18,7 +18,7 @@ export default function Main() {
           <div className="md:col-span-3 grid-cols-3 sm:grid-cols-3 container-fluid shadow-lg">
             <SearchBar />
             <Charts />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-5">
               <Portfolio />
               <Exchange />
             </div>

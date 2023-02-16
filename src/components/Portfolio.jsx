@@ -66,17 +66,14 @@ export default function Portfolio() {
                             data: dataSet1,
                             backgroundColor: ["#0077b6","#ef476f","#00afb9"],
                             borderColor:["white"],
-                            borderWidth:0,
-                            
-                            
-                            
+                            borderWidth:0,      
                         }
                     ]
                 });
                 setTotalVolume(dataSet1.reduce((partialSum, a) => partialSum + a, 0).toFixed(0)
                 )
             }).catch((e) => {
-                console.log(e);
+                // console.log(e);
             })
         }
         fetchD();
@@ -91,8 +88,8 @@ export default function Portfolio() {
                 <span className='text-xl font-semibold pt-6 ml-8'>
                     Portfolio{" "}
                 </span>
-                <span className="text-gray-300 lg:ml-[80px] xl:ml-[120px] text-sm md:ml-[70px] sm:ml-[10px] ml-[50px]">
-                    Total Value
+                <span className="text-gray-700 lg:ml-[80px] xl:ml-[120px] text-sm md:ml-[70px] sm:ml-[10px] ml-[50px]">
+                    Total Value :
                 </span>{" "}
                 <span className="text-xs font-semibold   ">
                     {" "}
@@ -103,7 +100,7 @@ export default function Portfolio() {
                 </span>
             </div>
             <div className="xl:w-[240px] xl:-h[180px] md:w-[240px] xl:ml-[100px] md:ml-[170px] h-[230px] -mt-[15px] ">
-                <Pie data={data} options={options} />
+                <Pie data={data} options={options}  />
             </div>
             <div className="mt-5"></div>
         </div>

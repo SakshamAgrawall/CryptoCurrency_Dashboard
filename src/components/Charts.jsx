@@ -13,7 +13,7 @@ export default function Charts() {
     const [chartData, setChartData] = useState([])
     const [chartType, setChartType] = useState("Line Chart")
 
-    
+
     useEffect(() => {
         fetch(
             `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}&interval=${interval}`
@@ -55,38 +55,35 @@ export default function Charts() {
 
 
     return (
-        <div className="container-fluid w-full h-96 border  border-gray-100 bg-opacity-10 backdrop-blur-md my-5 rounded-lg px-4 pt-3 lg:mt-3">
+        <div className="container-fluid w-full h-120 border  border-gray-100 bg-opacity-10 backdrop-blur-md my-5 rounded-lg px-4 pt-3 lg:mt-3">
             <div className="text-black flex ml-4 py-0 pt-20 absolute text-md">
                 {currency.toUpperCase()}
             </div>
             <div className="flex lg:gap-3 absolute items-center lg:ml-48 md:ml-16 sm:ml-28 ml-16 gap-2 lg:left-34 left-4 md:mt-3 lg:mt-3 sm:mt-3 mt-3">
                 {/* Created Buttons For the Sorting of Graph */}
-                <button value={1} className={`px-3 py-1.5 ${days === 1 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`} onClick={oneDay}>
+                <button value={1} className={`px-3 py-1.5 ${days === 1 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`} onClick={oneDay}>
                     1D
                 </button>
-                <button value={7} className={`px-3 py-1.5 ${days === 7 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`} onClick={oneWeek}>
+                <button value={7} className={`px-3 py-1.5 ${days === 7 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`} onClick={oneWeek}>
                     1W
                 </button>
-                <button value={30} className={`px-3 py-1.5 ${days === 30 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`} onClick={oneMonth}>
+                <button value={30} className={`px-3 py-1.5 ${days === 30 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`} onClick={oneMonth}>
                     1M
                 </button>
-                <button value={180} className={`px-3 py-1.5 ${days === 180 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`} onClick={sixMonth}>
+                <button value={180} className={`px-3 py-1.5 ${days === 180 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`} onClick={sixMonth}>
                     6M
                 </button>
-                <button value={365} className={`px-3 py-1.5 ${days === 365 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`} onClick={oneYear}>
+                <button value={365} className={`px-3 py-1.5 ${days === 365 ? "border-black" : ""} rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`} onClick={oneYear}>
                     1Y
                 </button>
-                <button value={365} className={`rounded-md text-xs bg-gray-100 backdrop-blur-md font-semibold lg:mt-2`}>
-                <i className={`mr-1 text-[25px] fa-regular fa-calendar-days`}></i>
-                </button>
-                <div className="flex absolute items-center rounded-md bg-gray-100 backdrop-blur-md p-2 w-24  lg:left-[35rem] lg:mt-4 md:left-[25rem]">
+                <div className="flex absolute items-center rounded-md bg-gray-100 backdrop-blur-md p-2 w-24  lg:left-[35rem] lg:mt-4 md:left-[25rem] md:mt-4 sm:right-[9rem] mt-20 ml-2">
                     <select onChange={(x) => { setId(x.target.value) }} className="w-full bg-transparent text-transform:capitalize outline-none -mr-2" >
 
                         {cryptoId && Object.values(cryptoId).map((d, k) => (
-                            <option key={k} value={d.id} name={d.name} className="text-gray-600">{d.id}</option>
+                            <option key={k} value={d.id} name={d.name} className="text-gray-600">{d.id.charAt(0).toUpperCase() + d.id.slice(1)}</option>
                         ))}
                     </select>
-                    <div className="rounded-md bg-gray-100 backdrop-blur-md p-2 absolute lg:left-[6rem] md:left-[6rem] left-[6rem] w-40 ml-5 text-center ">
+                    <div className="rounded-md bg-gray-100 backdrop-blur-md p-2 absolute lg:left-[6rem] md:left-[6rem] left-[6rem] w-28 ml-5">
                         <select className='bg-transparent outline-none w-full sm:justify-center' onChange={(x) => setChartType(x.target.value)}>
                             <option value={`BarChartH`} className="text-gray-600" >Bar Chart Horizontal </option>
                             <option value={`LineChart`} className="text-gray-600">Line Chart</option>
