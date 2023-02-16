@@ -6,8 +6,9 @@ import { CryptoProvider } from './Context/Context';
 
 function App() {
   return (
+    
     <Provider store={store}>
-      <CryptoProvider>
+      <CryptoProvider >
         <Main />
       </CryptoProvider>
     </Provider>

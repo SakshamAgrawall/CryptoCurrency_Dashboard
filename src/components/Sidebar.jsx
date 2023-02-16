@@ -2,16 +2,23 @@
 
 import React, { useContext } from "react";
 import { CryptoContext } from "../Context/Context";
-import { App } from "../App.css";
+
+import { BiReset } from 'react-icons/bi'
+
 
 export default function Sidebar() {
-  const { cryptoData, currency } = useContext(CryptoContext);
+  const { cryptoData, currency,resetFunction } = useContext(CryptoContext);
   return (
     <div className=" bg-white scroll-smooth backdrop-blur-md border rounded-lg shadow-lg scrollspy" data-bs-spy="scroll" data-bs-target="#scrollspy1" data-bs-offset="200">
       <div>
-        <p className="text-black text-bold text-[20px] text-center mt-4 font-bold">
+        <p className="text-black text-bold text-[15px] text-center mt-4 font-bold">
           Cryptocurrency by market cap
         </p>
+      </div>
+      <div className="flex relative justify-end mt-3">
+      <button className="w-[1.6rem] flex absolute hover:scale-110 transition all transition-ease" onClick={resetFunction} >
+        <BiReset />
+      </button>
       </div>
       <div>
         {cryptoData ? (
@@ -34,18 +41,16 @@ export default function Sidebar() {
                     <div className="flex flex-row justify-end mr-2">
                       <div
                         className={`text-[20px] 
-                        ${
-                          element.market_cap_change_percetage_24h > 0
+                        ${element.market_cap_change_percetage_24h > 0
                             ? "text-green-700"
                             : "text-red-700"
-                        }`}
+                          }`}
                       >
                         <i
-                          className={`mr-1 text-[25px] ${
-                            element.market_cap_change_percetage_24h > 0
-                              ? "fa-solid fa-caret-up"
-                              : "fa-solid fa-caret-down"
-                          }`}
+                          className={`mr-1 text-[25px] ${element.market_cap_change_percetage_24h > 0
+                            ? "fa-solid fa-caret-up"
+                            : "fa-solid fa-caret-down"
+                            }`}
                         ></i>
                         <span>
                           {parseFloat(
@@ -59,7 +64,7 @@ export default function Sidebar() {
                       <span className="text-[15px] -mt-4 ml-3 flex pl-8 mx-4 mb-4 truncate">
                         Mkt.Cap{" "}
                         {/* Intl.NumberFormat() --function that formats a number according to the locale and formatting options of this Intl.NumberFormat object */}
-                        {new Intl.NumberFormat("en-IN", {   
+                        {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: currency,
                         }).format(element.market_cap)}
