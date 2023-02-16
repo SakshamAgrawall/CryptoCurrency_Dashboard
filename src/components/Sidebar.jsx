@@ -2,64 +2,72 @@
 
 import React, { useContext } from "react";
 import { CryptoContext } from "../Context/Context";
+import { BiReset } from "react-icons/bi";
 
-import { BiReset } from 'react-icons/bi'
-
-
-export default function Sidebar() {
-  const { cryptoData, currency,resetFunction } = useContext(CryptoContext);
+function Sidebar() {
+  const { cryptoData, currency, resetFunction } = useContext(CryptoContext);
   return (
-    <div className=" bg-white scroll-smooth backdrop-blur-md border rounded-lg shadow-lg scrollspy" data-bs-spy="scroll" data-bs-target="#scrollspy1" data-bs-offset="200">
+    <div
+      className=" bg-white scroll-smooth backdrop-blur-md border rounded-lg shadow-lg scrollspy"
+      data-bs-spy="scroll"
+      data-bs-target="#scrollspy1"
+      data-bs-offset="200"
+    >
       <div>
         <p className="text-black text-bold text-[15px] text-center mt-4 font-bold">
           Cryptocurrency by market cap
         </p>
       </div>
       <div className="flex relative justify-end mt-3">
-      <button className="w-[1.6rem] flex absolute hover:scale-110 transition all transition-ease" onClick={resetFunction} >
-        <BiReset />
-      </button>
+        <button
+          className="w-[1.6rem] flex absolute hover:scale-110 transition all transition-ease"
+          onClick={resetFunction}
+        >
+          <BiReset />
+        </button>
       </div>
       <div>
         {cryptoData ? (
           <div className="w-full table-auto ">
             <div>
-              {cryptoData.map((element) => {
+              {cryptoData.map((cryptoData) => {
                 return (
                   <div
-                    key={element.id}
-                    className="text-center text-lg border-b"
+                    key={cryptoData.id}
+                    className="text-center text-lg border-b hover-bg-gray-600 last:border-b-0"
                   >
                     <img
-                      src={element.image}
-                      alt={element.name}
-                      className="flex absolute w-[1.5rem] h-[1.6rem] ml-2"
+                      src={cryptoData.image}
+                      alt={cryptoData.name}
+                      className="flex absolute w-[1.5rem] h-[1.6rem] ml-2 mt-2"
                     />
                     <span className="flex flex-row pl-9 mt-3 text-[20px]">
-                      {element.name}
+                      {cryptoData.name}
                     </span>
                     <div className="flex flex-row justify-end mr-2">
                       <div
-                        className={`text-[20px] 
-                        ${element.market_cap_change_percetage_24h > 0
-                            ? "text-green-700"
-                            : "text-red-700"
-                          }`}
+                        className={`text-[12px] font-semibold ${
+                          cryptoData.market_cap_change_percentage_24h > 0
+                            ? "text-green-500 "
+                            : "text-red-500 "
+                        }`}
                       >
                         <i
-                          className={`mr-1 text-[25px] ${element.market_cap_change_percetage_24h > 0
-                            ? "fa-solid fa-caret-up"
-                            : "fa-solid fa-caret-down"
-                            }`}
+                          className={`mr-1 text-sm ${
+                            cryptoData.market_cap_change_percentage_24h > 0
+                              ? "fa-solid fa-caret-up"
+                              : "fa-solid fa-caret-down"
+                          }`}
                         ></i>
                         <span>
                           {parseFloat(
-                            element.market_cap_change_percentage_24h
+                            cryptoData.market_cap_change_percentage_24h
                           ).toFixed(2)}
                           %
                         </span>
                       </div>
                     </div>
+
                     <div className="-ml-9">
                       <span className="text-[15px] -mt-4 ml-3 flex pl-8 mx-4 mb-4 truncate">
                         Mkt.Cap{" "}
@@ -67,7 +75,7 @@ export default function Sidebar() {
                         {new Intl.NumberFormat("en-IN", {
                           style: "currency",
                           currency: currency,
-                        }).format(element.market_cap)}
+                        }).format(cryptoData.market_cap)}
                       </span>
                     </div>
                   </div>
@@ -76,7 +84,9 @@ export default function Sidebar() {
             </div>
           </div>
         ) : null}
-      </div>  
+      </div>
     </div>
   );
 }
+
+export default Sidebar;
