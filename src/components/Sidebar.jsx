@@ -7,7 +7,7 @@ import { BiReset } from 'react-icons/bi'
 export default function Sidebar() {
   const { cryptoData, currency,resetFunction } = useContext(CryptoContext);
   return (
-    <div className=" bg-white scroll-smooth backdrop-blur-md border rounded-lg shadow-lg">
+    <div className=" bg-white scroll-smooth backdrop-blur-md border rounded-lg shadow-lg scrollspy" data-bs-spy="scroll" data-bs-target="#scrollspy1" data-bs-offset="200">
       <div>
         <p className="text-black text-bold text-[15px] text-center mt-4 font-bold">
           Cryptocurrency by market cap
@@ -74,7 +74,7 @@ export default function Sidebar() {
             </div>
           </div>
         ) : null}
-      </div>
+      </div>  
     </div>
   );
 }
