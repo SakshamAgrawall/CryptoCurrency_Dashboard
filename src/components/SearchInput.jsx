@@ -5,19 +5,21 @@ import "../App.css"
 
 export default function SearchInput({ handleSearch }) {
     const [searchText, setSearchText] = useState("");
-    const { searchData, setCoinSearch, setSearchData } = useContext(CryptoContext)
+    const { searchData, setCoinSearch, setSearchData } = useContext(CryptoContext);
 
     let handleInput = (x) => {
         x.preventDefault()
-        let query = x.target.value;
-        setSearchText(query)
-        handleSearch(query)
+        // let query = x.target.value;
+        setSearchText(x.target.value);
+        handleSearch(x.target.value);
     };
 
     const selectCoin = (coin) => {
-        setCoinSearch(coin)
-        setSearchData("")
-        setSearchData()
+        //our api to fetch the search result;
+        // console.log("coin",coin)
+        setCoinSearch(coin);
+        setSearchText("");
+        setSearchData(coin);
     }
 
 
@@ -45,7 +47,7 @@ export default function SearchInput({ handleSearch }) {
                             return (
                                 <li className='flex items-center ml-4 my-2 cursor-pointer' key={coin.id} onClick={() => selectCoin(coin.id)}>
                                     <img src={coin.thumb} alt="coin" className='w-[2rem] h-[2rem] mx-1.5 alt="m"' />
-                                    <span className='text-xl'>{coin.id}</span>
+                                    <span className='text-xl' >{coin.id}</span>
                                 </li>
                             );
                         })
@@ -55,9 +57,7 @@ export default function SearchInput({ handleSearch }) {
                             <span className="ml-2 font-semibold">Digging....</span>
                         </div>
                     )}
-                    <div className="w-full h-full mt-4 flex justify-center items-center font-semibold" >
-                        Not Able To Fetch
-                    </div>
+                 
                 </ul>
             ) : null } 
         </>
