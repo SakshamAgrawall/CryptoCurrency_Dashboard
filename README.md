@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-# Almabetter Capstone Project - Cryptocurrency Dashboard
-=======
+
 # Almabetter Capstone Project - Cryptocurrency Dashboard
 
 This is an Cryptocurrency Dashboard website that allows users to view cryptocurrency trends through graphical representation.
-
 ## Deployment
 
 Click on the link to visit Cryptocurrency Dashboard link
@@ -46,8 +43,7 @@ npm run start
 - user can also visit the website in any device as the website is Resposive and User-friendly.
 
 ## 🛠 Skills
- HTML | CSS | JavaScript | ReactJs
+ HTML | CSS | JavaScript | ReactJs | TailwindCSS
  
 ## NOTE 
  This capstone project is associated with <a href="https://www.almabetter.com">Almabetter</a>
->>>>>>> 7d3c7e9f81b04516ad92f8fb1106f75c99f49a58

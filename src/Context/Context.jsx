@@ -29,7 +29,7 @@ export const CryptoProvider = ({ children }) => {
       setCryptoData(data);
       // console.log(data.length)
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -44,7 +44,7 @@ export const CryptoProvider = ({ children }) => {
       setCryptoId(data);
       // console.log(data.length)
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -57,10 +57,10 @@ export const CryptoProvider = ({ children }) => {
         .then((res) => res.json())
         .then((json) => json);
 
-      console.log(data);
+      // console.log(data);
       setSearchData(data.coins);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
