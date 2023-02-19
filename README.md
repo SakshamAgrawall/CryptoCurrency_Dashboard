@@ -4,7 +4,8 @@
 This is an Cryptocurrency Dashboard website that allows users to view cryptocurrency trends through graphical representation.
 ## Deployment
 
-Click on the link to visit Cryptocurrency Dashboard link
+Click on the link to visit Cryptocurrency Dashboard link <br/>
+https://crypto-currency-dashboard-s.netlify.app/
 
 ## Framework /Dependencies
 - ReactJs - https://reactjs.org/
