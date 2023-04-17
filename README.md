@@ -1,5 +1,5 @@
 
-# Almabetter Capstone Project - Cryptocurrency Dashboard
+# Capstone Project - Cryptocurrency Dashboard
 
 This is an Cryptocurrency Dashboard website that allows users to view cryptocurrency trends through graphical representation.
 ## Deployment
